@@ -2,6 +2,9 @@
 
 The only official ReScript starter template.
 
+Followed the modifications outlined here:
+https://dusty.phillips.codes/2021/09/30/fast-bare-rescript-react/
+
 ## Installation
 
 ```sh

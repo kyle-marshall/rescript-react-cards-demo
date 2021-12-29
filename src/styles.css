@@ -1,0 +1,195 @@
+body {
+    background-color: #444;
+    color: #eee;
+}
+
+.m-card-spread {
+    display: flex;
+    padding: 100px;
+}
+
+.m-card:hover {
+    transform: translateY(-20px);
+    z-index: 1000;
+}
+
+.m-card-selected {
+    z-index: 999;
+    border: 2px dashed #ffee00aa;
+    border-radius: 10px;
+}
+
+.m-card-selected:hover {
+    transform: scale(1.5, 1.5);
+}
+
+.m-card-spread .m-card {
+    margin-left: -120px;
+    transition: margin 0.5s;
+}
+
+.m-card-spread .m-card:first-child {
+    margin-left: 4px;
+}
+
+.m-card-spread .m-card:hover {
+    border-color: yellow;
+}
+
+.m-card-spread .m-card:hover+.m-card {
+    margin-left: 0;
+}
+
+.m-card {
+    perspective: 1000px;
+    transition: transform 0.8s;
+}
+
+.m-card-flipped .m-card-inner {
+    transform: rotateY(180deg);
+}
+
+.m-card-inner {
+    margin: 4px;
+    width: 280px;
+    height: 400px;
+    text-align: center;
+    background-color: #a597b1;
+    background-image: url(https://homunculi.org/mysticards/grunge-texture.png);
+    border-radius: 10px;
+    border: 2px solid #141414;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.m-card-back, .m-card-front {
+    position: absolute;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.m-card-back {
+    transform: rotateY(180deg);
+}
+
+.m-card-title {
+    width: 88%;
+    padding: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 12px;
+    font-size: 11px;
+    color: #353535;
+    background-color: #fff4;
+    border: 1px solid #222;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    text-align: left;
+    font-family: "Lucida Handwriting", cursive;
+}
+
+.m-card-image-frame {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #222;
+}
+
+.m-card-image-frame img {
+    width: 100%;
+}
+
+.m-card-info {
+    background-color: #0005;
+    width: 88%;
+    padding: 1%;
+    height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #222;
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left;
+    font-size: 12px;
+}
+
+.m-card-back-content {
+    width: 90%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #232334;
+}
+
+.attribute-list {
+    list-style-type: none;
+    background-color: #111D;
+    text-align: left;
+    padding-left: 4px;
+    margin: 0;
+}
+
+.attribute-list li {
+    border-top: solid 1px #fff5;
+}
+
+.attribute-list li:first-child {
+    border: none;
+}
+
+.attribute-list .trait {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.attribute-list .trait-type {
+    color: #ddd;
+}
+
+.attribute-list .trait-value {
+    text-decoration: underline;
+}
+
+.common .trait-value {
+    text-decoration: none;
+    color: #888;
+}
+.rare .trait-value {
+    color: rgb(93, 166, 235);
+}
+.epic .trait-value  {
+    color: rgb(163, 108, 235);
+}
+.legendary .trait-value  {
+    color: rgb(235, 158, 34);
+}
+
+.trait:before {
+    font-size: 16px;
+    margin-right: 6px;
+}
+
+.common:before {
+    content: "🔸";
+    filter: grayscale();
+}
+
+.rare:before {
+    content: "⭐";
+    filter: hue-rotate(190deg);
+}
+
+.epic:before {
+    content: "🌟";
+    filter: hue-rotate(215deg);
+}
+
+.legendary:before {
+    content: "💫";
+    filter: hue-rotate(345deg);
+}
